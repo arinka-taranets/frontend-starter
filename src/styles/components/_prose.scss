@@ -1,0 +1,18 @@
+// Readable measure for long-form content pages.
+
+.prose {
+  max-width: 65ch;
+}
+
+.prose > * + * {
+  margin-block-start: var(--space-sm);
+}
+
+.prose > h2 {
+  margin-block-start: var(--space-lg);
+}
+
+.prose__figure {
+  width: 100%;
+  border-radius: var(--radius-md);
+}

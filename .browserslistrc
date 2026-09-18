@@ -1,0 +1,4 @@
+# Browser support for this project.
+# Read by Autoprefixer. Share this with the client when agreeing on support.
+defaults and fully supports es6-module
+not dead

@@ -1,0 +1,25 @@
+// Single entry point for all styles, imported from src/scripts/main.js.
+// Order matters: tokens define the values everything else reads, the reset comes
+// before anything that styles elements, and utilities come last so they can win
+// without !important.
+// `abstracts` is not listed here because it emits no CSS. Each partial loads it
+// itself with `@use '../abstracts' as a;`.
+
+// Base
+@use 'base/tokens';
+@use 'base/reset';
+@use 'base/typography';
+
+// Layout
+@use 'layout/container';
+@use 'layout/header';
+@use 'layout/footer';
+
+// Components
+@use 'components/button';
+@use 'components/hero';
+@use 'components/features';
+@use 'components/prose';
+
+// Utilities
+@use 'utilities/a11y';

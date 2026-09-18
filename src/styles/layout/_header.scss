@@ -1,0 +1,101 @@
+@use '../abstracts' as a;
+
+.site-header {
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+.site-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-block: var(--space-sm);
+}
+
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--color-text);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+// --- Mobile menu -----------------------------------------------------------
+// Progressive enhancement: without JavaScript the navigation is simply always
+// visible. The collapsing behaviour only applies once main.js sets data-js.
+
+.nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: none;
+  cursor: pointer;
+}
+
+.nav-toggle__cross {
+  display: none;
+}
+
+.nav-toggle[aria-expanded='true'] .nav-toggle__bars {
+  display: none;
+}
+
+.nav-toggle[aria-expanded='true'] .nav-toggle__cross {
+  display: block;
+}
+
+[data-js='true'] .primary-nav {
+  display: none;
+  flex-basis: 100%;
+  padding-block-end: var(--space-2xs);
+}
+
+[data-js='true'] .primary-nav[data-open='true'] {
+  display: block;
+}
+
+.primary-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.primary-nav a {
+  display: inline-block;
+  padding-block: var(--space-3xs);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.primary-nav a:hover {
+  text-decoration: underline;
+}
+
+// The active page is announced to screen readers and shown visually.
+.primary-nav a[aria-current='page'] {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+@include a.respond-to('lg') {
+  .nav-toggle {
+    display: none;
+  }
+
+  [data-js='true'] .primary-nav {
+    display: block;
+    flex-basis: auto;
+    padding-block-end: 0;
+  }
+}

@@ -1,0 +1,11 @@
+// Breakpoints are the one thing that must stay a Sass variable: a media query
+// cannot read a CSS custom property.
+// Values are in rem so the layout still responds when someone changes their
+// browser font size.
+
+$breakpoints: (
+  'sm': 30rem,
+  'md': 48rem,
+  'lg': 64rem,
+  'xl': 80rem,
+) !default;

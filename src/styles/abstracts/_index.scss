@@ -1,0 +1,6 @@
+// Facade for the abstracts layer. Every partial loads it once, under a namespace:
+//   @use '../abstracts' as a;
+//   .thing { @include a.respond-to('lg') { ... } }
+
+@forward 'breakpoints';
+@forward 'mixins';

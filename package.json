@@ -1,0 +1,40 @@
+{
+  "name": "frontend-starter",
+  "version": "1.0.0",
+  "description": "Reusable production frontend starter: Vite, multi-page HTML, Handlebars partials, SCSS modules, responsive image pipeline, accessibility and performance baked in.",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "images": "node scripts/generate-images.mjs",
+    "predev": "npm run images",
+    "dev": "vite",
+    "prebuild": "npm run images",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint:js": "eslint .",
+    "lint:css": "stylelint \"src/**/*.scss\"",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "eslint . --fix && stylelint \"src/**/*.scss\" --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run lint && npm run format:check"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "autoprefixer": "^10.5.6",
+    "eslint": "^10.10.0",
+    "globals": "^17.12.0",
+    "handlebars": "^4.7.9",
+    "prettier": "^3.9.6",
+    "sass-embedded": "^1.104.1",
+    "sharp": "^0.35.4",
+    "stylelint": "^17.15.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "svgo": "^4.1.0",
+    "vite": "^8.3.0",
+    "vite-plugin-handlebars": "^2.0.3"
+  }
+}

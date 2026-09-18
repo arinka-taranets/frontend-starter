@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{locale}}">
+  <head>
+    {{> head}}
+  </head>
+
+  <body>
+    {{> header}}
+
+    <main id="main">
+      <section class="section" aria-labelledby="about-title">
+        <div class="container prose">
+          <h1 id="about-title">About this starter</h1>
+
+          <p class="lead">
+            This page exists for a specific reason: it is nested one level deep. If asset paths,
+            partials or the active navigation state were going to break anywhere, they would
+            break here.
+          </p>
+
+          {{picture
+            src="workspace.jpg"
+            alt="Abstract warm gradient used as a placeholder photograph"
+            sizes="(min-width: 60rem) 60rem, 100vw"
+            class="prose__figure"
+          }}
+
+          <h2>How it is meant to be used</h2>
+          <p>
+            Clone it, delete the demo sections, keep the plumbing. The parts worth keeping are the
+            build config, the SCSS architecture, the image pipeline and the accessibility
+            utilities — everything else on this page is example content.
+          </p>
+
+          <h2>What is deliberately missing</h2>
+          <p>
+            No TypeScript, no test runner, no component generator, no CI. Each of those is a cost
+            you pay forever, and none of them earn their place on a typical marketing site. Add
+            them to a project when that project actually needs them.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

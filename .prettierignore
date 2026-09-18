@@ -1,0 +1,7 @@
+node_modules/
+dist/
+public/img/
+
+# HTML is left alone: these files contain Handlebars expressions
+# ({{> partial}}, {{#if}}) and Prettier can reflow them in confusing ways.
+*.html

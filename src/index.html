@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="{{locale}}">
+  <head>
+    {{> head}}
+  </head>
+
+  <body>
+    {{> header}}
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero__inner">
+          <div class="hero__text">
+            <h1 id="hero-title">A starter you can hand to a client</h1>
+            <p class="lead">
+              Multi-page HTML, SCSS modules, responsive images and accessibility defaults —
+              already wired together, so a new project starts at the interesting part.
+            </p>
+            <p class="hero__actions">
+              <a class="button" href="/about/">See what is inside</a>
+              <a class="button button--ghost" href="#features">Features</a>
+            </p>
+          </div>
+
+          <div class="hero__media">
+            {{picture
+              src="hero.jpg"
+              alt=""
+              sizes="(min-width: 60rem) 50vw, 100vw"
+              class="hero__image"
+              priority=true
+            }}
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features" aria-labelledby="features-title">
+        <div class="container">
+          <h2 id="features-title">What you get</h2>
+
+          <ul class="features">
+            <li class="features__item">
+              <h3>Pages, not boilerplate</h3>
+              <p>
+                Every <code>.html</code> file under <code>src/</code> becomes a page
+                automatically. Shared markup lives in partials, so a nav change is one edit.
+              </p>
+            </li>
+            <li class="features__item">
+              <h3>Images handled for you</h3>
+              <p>
+                Drop a file into <code>src/assets/images/</code>. AVIF, WebP and a fallback are
+                generated at every breakpoint, with width and height set to prevent layout shift.
+              </p>
+            </li>
+            <li class="features__item">
+              <h3>Accessible by default</h3>
+              <p>
+                Skip link, visible focus rings, real landmarks, <code>aria-current</code> on the
+                active page and a keyboard-operable mobile menu — present from the first commit.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    {{> footer}}
+  </body>
+</html>

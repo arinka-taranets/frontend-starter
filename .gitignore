@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Generated images and their manifest — produced by `npm run images`, never commit
+public/img/
+.image-manifest.json
+
+# Local env / editor / OS
+.env
+.env.*
+!.env.example
+*.local
+.DS_Store
+.vite/

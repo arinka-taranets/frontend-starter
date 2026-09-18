@@ -1,0 +1,36 @@
+@use '../abstracts' as a;
+
+.hero {
+  padding-block: var(--space-xl);
+}
+
+.hero__inner {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-block-start: var(--space-md);
+}
+
+.hero__text > .lead {
+  margin-block-start: var(--space-sm);
+  max-width: 48ch;
+}
+
+.hero__image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+@include a.respond-to('lg') {
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+}

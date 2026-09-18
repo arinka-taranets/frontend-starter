@@ -1,0 +1,30 @@
+@use '../abstracts' as a;
+
+// One implementation of the hiding technique lives in the mixin.
+// This class is the markup-facing form of it — nothing is duplicated.
+.visually-hidden {
+  @include a.visually-hidden;
+}
+
+// The skip link is invisible until it receives keyboard focus.
+// It is the first focusable element on every page.
+.skip-link {
+  @include a.visually-hidden;
+
+  position: fixed;
+  z-index: 100;
+  inset-block-start: var(--space-2xs);
+  inset-inline-start: var(--space-2xs);
+}
+
+.skip-link:focus-visible {
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: var(--space-2xs) var(--space-sm);
+  overflow: visible;
+  clip-path: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+}
