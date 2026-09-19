@@ -374,8 +374,23 @@ built output via `npm run preview`, not on the dev server.
 
 ## Using this starter for a new client project
 
+On GitHub, click **Use this template → Create a new repository**, or from the
+command line:
+
 ```bash
-git clone <this-repo> client-name
+gh repo create client-name --template arinka-taranets/frontend-starter --private --clone
+cd client-name
+npm install
+```
+
+The new repository starts from a single commit with its own history. It is not a
+fork, and nothing from this repository's history comes along.
+
+If the client's code lives on another host (GitLab, Bitbucket), copy the files and
+start a fresh history instead:
+
+```bash
+git clone --depth 1 https://github.com/arinka-taranets/frontend-starter.git client-name
 cd client-name
 rm -rf .git && git init
 npm install
