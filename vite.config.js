@@ -103,7 +103,9 @@ export default defineConfig({
     outDir: resolve(ROOT, 'dist'),
     // Required: outDir sits outside root, so Vite will not clear it by default.
     emptyOutDir: true,
-    sourcemap: true,
+    // Off: a map in dist/ is public and exposes the original source.
+    // For a one-off debug build: npm run build -- --sourcemap
+    sourcemap: false,
     // Warn early if a page ships an oversized bundle.
     chunkSizeWarningLimit: 300,
   },

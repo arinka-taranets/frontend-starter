@@ -364,6 +364,8 @@ accessibility problems, so a green score is the floor, not the finish line:
 - AVIF / WebP with correct `srcset` and `sizes`
 - lazy loading everywhere except the one `priority` image
 - `width` / `height` on images to keep CLS at 0
+- no source maps in `dist/` — a shipped map is public and exposes the original
+  source. For a one-off debug build: `npm run build -- --sourcemap`
 
 **Target for a client site:** Lighthouse ≥95 on all four metrics, tested on the
 built output via `npm run preview`, not on the dev server.
@@ -403,6 +405,7 @@ utilities, linting — stays as is. That is the point.
 
 - [ ] `npm run check` passes
 - [ ] `npm run build` then `npm run preview` — test the built site, not the dev server
+- [ ] No `.map` files in `dist/` — a debug build with `--sourcemap` was not deployed
 - [ ] Lighthouse ≥95 on performance, accessibility, best practices, SEO
 - [ ] axe DevTools: 0 violations
 - [ ] Keyboard-only pass over every page
