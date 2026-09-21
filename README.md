@@ -93,14 +93,14 @@ with nothing else to remember.
 1. Create the file, for example `src/contact/index.html`.
 2. Add its data to `pages.config.js`:
 
-```js
-'contact/index.html': {
-  ...defaults,
-  page: 'contact',
-  title: 'Contact — Client Name',
-  description: 'How to reach us.',
-},
-```
+   ```js
+   'contact/index.html': {
+     ...defaults,
+     page: 'contact',
+     title: 'Contact — Client Name',
+     description: 'How to reach us.',
+   },
+   ```
 
 3. Add the link to `src/partials/header.html`.
 
@@ -313,10 +313,10 @@ dist/img/                   copied as-is
 2. Run `npm run images` (or just restart `npm run dev`).
 3. Use it:
 
-```html
-{{picture src="hero.jpg" alt="Description of the image" sizes="(min-width: 60rem) 50vw, 100vw"
-class="hero__image" priority=true }}
-```
+   ```html
+   {{picture src="hero.jpg" alt="Description of the image" sizes="(min-width: 60rem) 50vw, 100vw"
+   class="hero__image" priority=true }}
+   ```
 
 This produces a full `<picture>`: AVIF and WebP sources at every width, a JPEG or PNG
 fallback, plus `width` and `height` so the page never shifts as images load.
