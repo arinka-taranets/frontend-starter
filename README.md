@@ -110,6 +110,30 @@ tells you it is missing a title.
 
 `src/contact/index.html` is served at `/contact/`.
 
+### Why every page is a folder
+
+A page is `about/index.html`, not `about.html`, so that the URL is `/about/` with no
+extension and no server configuration. Serving `index.html` from a directory is
+behaviour every web server already has: nginx, Apache, S3, GitHub Pages, Netlify,
+Vercel and Cloudflare all do it untouched.
+
+The flat alternative builds `dist/about.html`, which is served at `/about.html`.
+Hiding that extension is a per-host setting — Netlify's Pretty URLs, Vercel's
+`cleanUrls`, an nginx `try_files` rule — so the URLs would depend on where the site
+is hosted, and would break on the day it moves. It also leaves both `/about` and
+`/about.html` reachable, which is the same page on two URLs.
+
+This is the default in most static site generators: Astro (`build.format: 'directory'`)
+and Hugo (`uglyURLs` off) both produce it. Next.js is the exception, and needs
+`trailingSlash: true` to match.
+
+The one cost is that relative paths differ by depth, which is why partials use
+root-absolute paths (`/scripts/main.js`) throughout.
+
+If your editor shows a row of tabs all named `index.html`, that is a display setting,
+not a reason to flatten the build. In VS Code, set `workbench.editor.labelFormat`
+to `short`.
+
 ---
 
 ## Handlebars partials
